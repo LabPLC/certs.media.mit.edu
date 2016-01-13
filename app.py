@@ -2,12 +2,16 @@ import json
 import os
 import urllib
 from flask import Flask, render_template, request
+from pymongo import MongoClient
 
 import config
 import helpers
+import secrets
 from verify import verify_doc
 
 app = Flask(__name__)
+app.secret_key = secrets.SECRET_KEY
+client = MongoClient(host=secrets.MONGO_URI)
 
 @app.route('/')
 def home_page():
@@ -35,6 +39,16 @@ def award_by_hash(identifier=None):
 	if award:
 		return render_template('award.html', award=award, verification_info=urllib.urlencode(verification_info))
 	return "Sorry, this page does not exist."
+
+@app.route('/usuario/<identifier>')
+def display_user(identifier=None):
+	if identifier:
+		return 'Hey!'
+	return "Sorry, this page does not exist."
+
+@app.route('/solicitar')
+def request():
+	return 'Request here'
 
 @app.route('/verify')
 def verify():
