@@ -36,6 +36,16 @@ def award_by_hash(identifier=None):
 		return render_template('award.html', award=award, verification_info=urllib.urlencode(verification_info))
 	return "Sorry, this page does not exist."
 
+@app.route('/usuario/<identifier>')
+def display_user(identifier=None):
+	if identifier:
+		return 'Hey!'
+	return "Sorry, this page does not exist."
+
+@app.route('/solicitar')
+def request():
+	return 'Request here'
+
 @app.route('/verify')
 def verify():
 	uid = request.args.get('uid')
