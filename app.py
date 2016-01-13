@@ -2,12 +2,16 @@ import json
 import os
 import urllib
 from flask import Flask, render_template, request
+from pymongo import MongoClient
 
 import config
 import helpers
+import secrets
 from verify import verify_doc
 
 app = Flask(__name__)
+app.secret_key = secrets.SECRET_KEY
+client = MongoClient(host=secrets.MONGO_URI)
 
 @app.route('/')
 def home_page():
