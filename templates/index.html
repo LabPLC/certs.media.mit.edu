@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,62 +8,202 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="static/img/favicon.ico">
-    <title>certs.media.mit.edu</title>
+    <title>certs.labcd.mx</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!-- Custom styles for this template -->
-    <link href="/static/css/style.css" rel="stylesheet">
-    <link href="/static/css/index.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/index.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-38544202-6', 'auto');
-      ga('send', 'pageview');
-
-    </script>
   </head>
 
   <body>
-
+  <nav class="navbar navbar-default language-nav">
+      <div class="col-md-6 col-sm-8 col-xs-12">
+        <p class="navbar-text navbar-right"><a href="/english" class="btn-default language-link" >Ingles</a></p>
+      </div>
+  </nav>
   <div class="container">
       <div class="row">
-        <div class="col-md-2 col-sm-2 col-xs-4">
+        <div class="col-md-6 col-sm-8 col-xs-12">
+          <!-- <a href="/english">
+            <img src="static/img/boton_ingles.png" class="translate img-responsive" alt="Ingles"/>
+          </a> -->
           <a href="http://media.mit.edu">
-            <img src="/static/img/mllogo.png" class="img-responsive" alt="MIT Media Lab"/>
+            <img src="static/img/talleres-logo.png" class="img-responsive" alt="Laboratorio para la Ciudad Passporte"/>
           </a>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6 col-sm-8 col-xs-12">
-          <h3 class="heading font-bold">MIT Media Lab<br>Digital Certificates</h3>
+          <h3 class="heading font-bold">Proyecto <br> Pasaporte</h3>
           <p class="description font-light">
-              A project by the <a href="http://learn.media.mit.edu" target="_blank">Media Lab Learning Initiative</a> that critically explores notions of social capital and reputation, empathy and gift economies, and social behavior. Digital certificates are registered on the blockchain, cryptographically signed, and tamper proof.
+              Pasaporte es un proyecto desarrollado en conjunto entre el Laboratorio para la Ciudad y el MIT Media Lab Learning Initiative con el objetivo de certificar y generar un historial de la participación de los ciudadanos en las actividades desarrolladas para por el Laboratorio mediante una tecnología segura, verificable y transparente.
           </p>
-          <h3 class="heading font-bold">Verify Certificate</h3>
-          <p class="description font-light">Scan your certificate's QR code to view and verify the certificate. Click the button below to install a QR code reader.</p>
-          <p class="lead font-light">
-            <a href="https://itunes.apple.com/us/app/qr-reader-for-iphone/id368494609" target="_blank"><button class="btn btn-lg btn-default">iOS</button></a>
-            <a href="https://market.android.com/details?id=com.threegvision.products.inigma.Android" target="_blank"><button class="btn btn-lg btn-default">Android</button></a>
-          </p>
-          <h3 class="heading font-bold">Recently Issued</h3>
-          <p class="font-light hash long-word"><a href="{{recents.urls[0]}}">{{recents.hashes[0]}}</a></p>
-          <p class="font-light hash long-word"><a href="{{recents.urls[1]}}">{{recents.hashes[1]}}</a></p>
-          <p class="font-light hash long-word"><a href="{{recents.urls[2]}}">{{recents.hashes[2]}}</a></p>                    
+          <h3 class="heading font-bold">Buscar</h3>
+          <p class="font-light"> Escriba la clave pública de su Laboratorio Pasaporte </p>
+          <form class="form-inline" action="/search" method="post">
+            <div class="col-xs-11 col-sm-11 col-md-11 no-padding">
+              <input type="text" class="form-control search-field" placeholder="" name="term">
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 no-padding">
+              <button type="submit" id="search-button" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </div>
+          </form>
+          <br><br>                 
         </div>
       </div>
-      <div class="row" id="footer-info">
+
+      <div class="row">
         <div class="col-md-6 col-sm-8 col-xs-12">
-          <h6 id="footer-start">Contact: <span class="font-light"><a href="mailto:certs@media.mit.edu">certs@media.mit.edu</a></span></h6>
-            <h6><span class="no-wrap">Media Lab </span><span class="no-wrap">Learning Initiative</span></h6>
-            <h6><span class="font-light"><a href="https://github.com/ml-learning/certs.media.mit.edu">Source code on Github</a></h6>
+          <h3 class="heading font-bold">FAQ</h3>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    ¿De qué me sirve un certificado digital del Laboratorio para la Ciudad?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                 En el Laboratorio creemos que el aprendizaje es un proceso individualizado, que no necesariamente se puede evaluar con estándares tradicionales. Este certificado es un respaldo a tu experiencia de aprendizaje en nuestros talleres. Nuestro objetivo es que este documento digital –verificable mediante métodos de encriptación– te sirva de referencia futura al compartir cómo este taller contribuyó a tu desarrollo personal y profesional. 
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Asistí a un taller del Laboratorio, ¿cómo solicito mi certificado?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    Al asistir a los talleres y eventos del Laboratorio para la Ciudad, tienes la oportunidad de solicitar un certificado digital que respalde tu asistencia y experiencia de aprendizaje. Puedes obtener tu certificado completando la información que se te pide en la siguiente forma. 
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    ¿Qué es un certificado digital?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                 El certificado digital es un documento digital que valida la participación de un usuario en alguna de las actividades impartidas por el Laboratorio para la Ciudad. <bg>
+
+                  El certificado digital se caracteriza por almacenar toda la información relevante del certificado de manera que se puede verificar mediante métodos de encriptación.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    ¿Porqué usar un certificado digital?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                    <h3>Es transparente:</h3>
+                    El certificado digital tiene la capacidad de verificarse sin necesidad de contactar directamente a la insititución que lo emite, debido a que se puede verificar la transacción y las identidades de los participantes (emisor y receptor del certificado) ya que esta información es pública.
+                    <br>
+                    <h3>Es seguro:</h3>
+                    Por otra parte, mientras que la transacción es pública, el contenido del certificado y la información personal del emisor y receptor es privada. 
+                    <br>
+                    <h3>Es fácil:</h3>
+                    Una vez que tienes tu Pasaporte del Laboratorio para la Ciudad, es fácil conservar, revisar y compartir un historial de las actividades en las que te has involucrado.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    ¿Cómo obtengo mi Pasaporte?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                    La primera vez que asistas a una actividad, se te otorgará tu Pasaporte del Laboratorio, que consiste de una tarjeta física que tiene impresa con tu Identificación Digital Única (IDU), conformada por una llave pública y una llave privada.
+                    <br>
+                    Tu IDU sirve para corroborar que los certificados que se emitan te pertenecen. 
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingSix">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    ¿Cómo obtengo los certificados digitales?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                <div class="panel-body">
+                    Cada vez que asistes a una acitivad del Laboratorio para la Ciudad, debrás registrar tu IDU. Cinco días despúes de tu participación, se te hará llegar tu certificado por correo electrónico. Deberás guardar este archivo y conservarlo.
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingSeven">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    ¿Quién avala a los certificados?
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                <div class="panel-body">
+                    Los certificados otorgados por el Laboratorio son avalados por el Laboratorio mismo, así como por las instituciones y expertos invitados a impartir cada taller.
+                                        <br>
+                    Cada institución y participante cuenta con una IDU con la cual firman los certificados.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingEight">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                    ¿Cómo funcionan los certificados digitales? 
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                <div class="panel-body">
+                    El certificado digital que se te envía a tu correo electrónico es un documento digital que contiene en sí mismo toda la información relevante del certificado, es decir, no se tiene que comparar contra ninguna base de datos de la institución emisora, en este caso del Laboratorio para la Ciudad.
+                    <br>
+                    Las siguientes cuestiones aseguran la validez del certificado:<br>
+                    1. El certificado se encripta utilizando un protocolo mediante el cual se obtiene un valor alfanumérico de dimensiones definidas.<br>
+                    2. Una transacción digital entre el emisor del certificado y el receptor contiene el valor obtenido en el paso anterior.<br>
+                    3. La transacción previa es almacenada en registros públicos en Internet, sin embargo, estos registros no contienen información privada de los participantes. <br>
+                    4. Una vez que el participante tiene el certificado se encripta y el valor alfanumérico resultante debe coincidir con el que quedó registrado en la transacción.
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row" id="footer-info">
+            <div class="col-md-6 col-sm-8 col-xs-12">
+              <h6 id="footer-start">Contacto: <span class="font-light"><a href="mailto:certs@labcd.mx">pasaporte@labcd.mx</a></span></h6>
+                <h6><span class="no-wrap"><a href="http://labcd.mx">Laboratorio para la Ciudad</a></span></h6>
+                <h6><span class="no-wrap">En colaboración con el <br><a href="http://learn.media.mit.edu">MIT Media Lab Learning Initiative</a></span></h6>
+            </div>
+          </div>
         </div>
       </div>
 
