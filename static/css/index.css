@@ -20,3 +20,40 @@ body{
 #footer-info{
   margin-top: 30px;
 }
+
+.panel-title > a:hover{
+	color: yellow;
+  text-decoration: none;
+}
+
+.panel-title > a:focus{
+  color: white;
+  text-decoration: none;
+}
+
+img.translate.img-responsive {
+    width: 50px;
+    float: right;
+}
+
+.language-link{
+  float: right;
+  padding: 5px;
+}
+
+a.btn-default.language-link{
+  color: black;
+  background-color: yellow;
+  font-weight: bold;
+  border: none;
+}
+
+.language-nav{
+  background-color: transparent;
+  border: none;
+}
+
+.search-field{
+  border-radius: 0px;
+  min-width: 100% !important;
+}

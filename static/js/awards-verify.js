@@ -1,9 +1,13 @@
+// loading_messages = [
+// 	'Computing SHA256 digest of local certificate...',
+// 	'Fetching hash in OP_RETURN field from blockchain.info...', 
+// 	'Comparing local hash to hash stored on the blockchain...']
+
 loading_messages = [
-	'Computing SHA256 digest of local certificate...', 
-	'Fetching hash in OP_RETURN field from blockchain.info...', 
-	'Comparing local hash to hash stored on the blockchain...']
-
-
+	'Procesando encriptaciin SHA256 del certificado local para obtener hash...',
+	'Recuperando hash almacenado en el campo OP_RETURN de blockchain.info...',
+	'Comparando hash local al hash obtenido de blockchain.info'
+]
 
 $(document).ready(function() {
 	$( "#verify-button" ).click(function() {

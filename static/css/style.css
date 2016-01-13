@@ -8,20 +8,21 @@
 @font-face {
   font-family: Neue Haas Grotesk Light;
   font-weight: 350;
-  src: url("/static/fonts/NHaasGroteskDSPro-35XLt.otf") format("opentype");
+  src: url("static/fonts/NHaasGroteskDSPro-35XLt.otf") format("opentype");
 }
 
 @font-face {
   font-family: Neue Haas Grotesk;
   font-weight: 550;
-  src: url("/static/fonts/NHaasGroteskDSPro-55Rg.otf") format("opentype");
+  src: url("static/fonts/NHaasGroteskDSPro-55Rg.otf") format("opentype");
 }
 
 @font-face {
   font-family: Neue Haas Grotesk Bold;
   font-weight: 750;
-  src: url("/static/fonts/NHaasGroteskDSPro-75Bd.otf") format("opentype");
+  src: url("static/fonts/NHaasGroteskDSPro-75Bd.otf") format("opentype");
 }
+
 
 /* GLOBAL STYLES */
 
@@ -31,7 +32,8 @@ body{
 
 a,
 a:hover,
-a:focus{
+a:focus,
+a:active{
   color: #333;
 }
 
@@ -41,12 +43,15 @@ a:hover,a:focus{
 
 /* Custom default button */
 .btn-default,
+.panel-default>.panel-heading,
+.panel-default>.panel-heading:hover,
+.panel-default>.panel-heading:focus,
 .btn-default:hover,
 .btn-default:focus {
   color: #fff;
   text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #222;
-  border: 1px solid #222;
+  background-color: #000;
+  border: 1px solid #000;
   border-radius: 0px;
 }
 
@@ -66,3 +71,6 @@ a:hover,a:focus{
   word-wrap: break-word;
 }
 
+.no-padding{
+  padding: 0px;
+}
